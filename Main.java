@@ -9,18 +9,32 @@ public class Main {
     // otherwise gives us a filename
     public static String getDestinationFile(String[] args) { ... }
 
-    public static int doComputation() { ... }
+    public static void write(String destination, int toWrite) {
+        if (destination == null) {
+            System.out.println(toWrite);
+        } else {
+            BufferedWriter writer =
+                new BufferedWriter(new FileWriter(new File(destination)));
+            writer.write(toWrite);
+            writer.close();
+        }
+    }
+    
+    public static int doComputation(String destination) {
+        // ...do some work...
+        int temporaryResult = 7;
+
+        // ...status report
+        write(destination, temporaryResult);
+        
+        // do some more work
+        temporaryResult++;
+        return temporaryResult;
+    }   
     
     public static void main(String[] args) {
         String destination = getDestinationFile(args);
         int result = doComputation();
-        if (destination == null) {
-            System.out.println(result);
-        } else {
-            BufferedWriter writer =
-                new BufferedWriter(new FileWriter(new File(destination)));
-            writer.write(result);
-            writer.close();
-        }
+        write(destination, result);
     }
 }
