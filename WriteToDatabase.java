@@ -1,4 +1,4 @@
-public class WriteToDatabase extends WriteParams {
+public class WriteToDatabase implements WriteParams {
     public final String dbHandle;
     private DatabaseHandle databaseWriter = null;
 

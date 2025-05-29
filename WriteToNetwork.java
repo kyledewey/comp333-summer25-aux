@@ -1,4 +1,4 @@
-public class WriteToNetwork extends WriteParams {
+public class WriteToNetwork implements WriteParams {
     public final String networkHandle;
     private NetworkHandle networkWriter = null;
 

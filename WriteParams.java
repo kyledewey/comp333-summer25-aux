@@ -1,5 +1,5 @@
-public abstract class WriteParams {
-    public abstract void write(int toWrite);
-    public abstract void close();
+public interface WriteParams {
+    public void write(int toWrite);
+    public void close();
 }
 

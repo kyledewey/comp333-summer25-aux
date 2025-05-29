@@ -1,4 +1,4 @@
-public class WriteToFile extends WriteParams {
+public class WriteToFile implements WriteParams {
     public final String destinationFile;
     private BufferedWriter fileWriter = null;
 

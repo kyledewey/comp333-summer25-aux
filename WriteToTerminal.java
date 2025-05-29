@@ -1,4 +1,4 @@
-public class WriteToTerminal extends WriteParams {
+public class WriteToTerminal implements WriteParams {
     public WriteToTerminal() {}
     public void write(int toWrite) {
         System.out.println(toWrite);
