@@ -36,10 +36,27 @@ public class Main {
         String dbHandle = getDatabaseHandle(args);
         String networkHandle = getNetworkHandle(args);
 
-        WriteParams params = new WriteParams(destinationFile,
-                                             dbHandle,
-                                             networkHandle);
+        WriteParams params;
+
+        if (destinationFile != null) {
+            // WriteParams = WriteToFile
+            // subtyping polymorphism: a more specific type can be used
+            // in place when we want a general one (compile-time thing)
+            params = new WriteToFile(destinationFile);
+        } else if (dbHandle != null) {
+            // WriteParams = WriteToDatabase
+            params = new WriteToDatabase(dbHandle);
+        } else if (networkHandle != null) {
+            // WriteParams = WriteToNetwork
+            params = new WriteToNetwork(networkHandle);
+        } else {
+            // WriteParams = WriteToTerminal
+            params = new WriteToTerminal();
+        }
+
         int result = doComputation(params);
+
+        // runtime type used to determine which method to call: ad-hoc polymorphism (runtime feature)
         params.write(result);
         params.close();
     }
