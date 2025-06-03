@@ -4,6 +4,7 @@ public class Nil implements ImmutableList {
     // [].addAmount(7) =>
     // []
     public ImmutableList addAmount(final int amount) {
+        // this: Nil
         // return new Nil();
         return this;
     }
