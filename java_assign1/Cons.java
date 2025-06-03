@@ -9,6 +9,18 @@ public class Cons implements ImmutableList {
         this.tail = tail;
     } // Cons
 
+    public int sum() {
+        return 0;
+    }
+    
+    public ImmutableList append(final ImmutableList other) {
+        return this;
+    }
+    
+    public boolean contains(final int value) {
+        return true;
+    }
+
     // [3, 7, 2, 1].addAmount(2) => [5, 9, 4, 3]
     //
     // new Cons(3, new Cons(7, new Cons(2, new Cons(1, new Nil()))))
