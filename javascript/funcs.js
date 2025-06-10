@@ -24,7 +24,7 @@ function printLessThan(arr, value) {
     //           function (e) {
     //               return e < value;
     //           });
-    printSome(arr, (e) => e > value);
+    printSome(arr, (e) => e < value);
 }
 
 function printLessThan7(arr) { printLessThan(arr, 7); }
