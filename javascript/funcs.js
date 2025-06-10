@@ -66,6 +66,8 @@ function indirectIf(bool, firstFunc, secondFunc) {
     }
 }
 
+// def indirectWhile(firstFunc: () => Boolean,
+//                   secondFunc: () => Unit): Unit
 function indirectWhile(firstFunc, secondFunc) {
     if (firstFunc()) {
         secondFunc();
