@@ -74,3 +74,23 @@ function indirectWhile(firstFunc, secondFunc) {
         indirectWhile(firstFunc, secondFunc);
     }
 }
+
+function temp() {
+    someVariable = 5;
+}
+
+// sumFunc takes a parameter
+function invert(sumFunc) {
+    return function (param) {
+        // console.log("Calling function passed to invert");
+        return !sumFunc(param);
+    }
+}
+
+function debug(f) {
+    return function (param) {
+        console.log("PARAM: " + param);
+        return f(param);
+    }
+}
+
