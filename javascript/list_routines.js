@@ -27,6 +27,9 @@ function printSome(arr, shouldPrint) {
 
 function sum(arr) {
     return reduce(arr, (accum, e) => accum + e, 0);
+
+    // return arr.reduce((accum, e) => accum + e, 0);
+
     // let retval = 0; // accumulator
     // for (let index = 0; index < arr.length; index++) {
     //     let elem = arr[index];
@@ -65,4 +68,28 @@ function reduce(arr, func, startAccum) {
     }
     return accum;
 }
-    
+
+function reduceWithImplicitStart(arr, func) {
+    let accum = arr[0];
+    for (let index = 1; index < arr.length; index++) {
+        let elem = arr[index];
+        accum = func(accum, elem);
+    }
+    return accum;
+}
+
+function getSmallest(arr) {
+    let smallestSoFar = arr[0];
+    for (let index = 1; index < arr.length; index++) {
+        let currentElement = arr[index];
+        smallestSoFar = (currentElement < smallestSoFar) ?
+            currentElement :
+            smallestSoFar;
+        // if (currentElement < smallestSoFar) {
+        //     smallestSoFar = currentElement;
+        // } else {
+        //     smallestSoFar = smallestSoFar;
+        // }
+    }
+    return smallestSoFar;
+}
