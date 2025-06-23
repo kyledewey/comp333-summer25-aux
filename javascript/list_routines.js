@@ -58,6 +58,11 @@ function concatenateAll(arr) {
     // return retval;
 }
 
+// def reduce[ItemType, AccumType](
+//    items: Seq[ItemType],
+//    f: (AccumType, ItemType) => AccumType,
+//    startAccum: AccumType): AccumType
+
 // func: (currentAccumulator, currentElement) => newAccumulator
 // startAccum: starting value of the accumulator
 function reduce(arr, func, startAccum) {
